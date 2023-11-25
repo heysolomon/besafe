@@ -59,23 +59,24 @@ export default function Home() {
   return (
     <div className='h-screen w-screen bg-bg bg-black bg-cover bg-center bg-repeat-y'>
       <nav className='flex items-center justify-between px-10 py-5'>
-        <p className='bg-gradient-to-r from-[#EB568E] to-[#144EE3] inline-block text-transparent bg-clip-text text-lite text-[30px] font-[800]'>beSAFE</p>
+        <p className='bg-gradient-to-r from-[#EB568E] to-[#144EE3] inline-block text-transparent bg-clip-text text-lite text-xl md:text-[30px] font-[800]'>beSAFE</p>
 
         <Button className='' onClick={() => console.log(process.env.NEXT_PUBLIC_API_KEY)}>
           View on Github
         </Button>
       </nav>
-      <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="mt-5 w-full">
-          {/* url */}
-          <div className='flex flex-col items-center w-[1000px] mx-auto mt-10'>
-            <h1 className='text-lite text-[50px] font-[800] text-center bg-gradient-to-r from-[#144EE3] via-[#EB568E] to-[#144EE3] inline-block text-transparent bg-clip-text'>Navigate the Web with Confidence :)</h1>
-            <p className='text-lite text-md mt-3 font-[300] text-center'>With beSAFE, ensure your online safety effortlessly. <br /> Just enter a URL, and we&apos;ll let you know if it&apos;s safe or not.</p>
+
+      <div className='flex flex-col items-center pt-24 px-7 md:p-0 md:w-[1000px] mx-auto mt-10'>
+        <h1 className='text-2xl md:text-[50px] font-[800] text-center bg-gradient-to-r from-[#144EE3] via-[#EB568E] to-[#144EE3] inline-block text-transparent bg-clip-text'>Navigate the Web with Confidence :)</h1>
+        <p className='text-lite text-[10px] md:text-md mt-3 font-[300] text-center'>With beSAFE, ensure your online safety effortlessly. <br /> Just enter a URL, and we&apos;ll let you know if it&apos;s safe or not.</p>
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="mt-5 w-full">
+
             <FormField control={form.control} name="url" render={({ field }) => (
               <FormItem className="mt-3">
                 <FormControl>
                   <CheckerInput
-                    field={field} 
+                    field={field}
                     id="url"
                     error={form.formState.errors.url}
                     {...field} />
@@ -83,15 +84,13 @@ export default function Home() {
                 <FormMessage className="text-white text-center text-xs" />
               </FormItem>
             )} />
-          </div>
 
 
-        </form>
-      </Form>
+
+          </form>
+        </Form>
+      </div>
 
     </div>
   )
 }
-
-
-// values.url.split(',').map((url) => url.trim())

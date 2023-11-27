@@ -17,4 +17,8 @@
     border-radius: 4px;
     background-color: #b7bac7;
   }
+
+  input::autofill {
+    background-color: transparent !important;
+  }
 }

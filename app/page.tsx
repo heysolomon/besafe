@@ -15,7 +15,7 @@ import { useToast } from "@/components/ui/use-toast";
 
 export default function Home() {
   const { toast } = useToast()
-  
+
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
@@ -74,21 +74,32 @@ export default function Home() {
 
       checkSuccess("")
 
-
-      toast({
-        variant: "destructive",
-        title: "Uh oh! Something went wrong.",
-        description: "There was a problem with your request.",
-        action: <ToastAction altText="Try again">Try again</ToastAction>,
-      })
-
-
-      console.log(res.data)
-    } catch (err) {
+      if (Object.keys(res.data).length === 0) {
+        toast({
+          variant: "success",
+          title: "You can proceed :)",
+          description: <p>This website <span className="underline">{values.url}</span> is safe to visit. Enjoy your online experience!</p>,
+        })
+      } else {
+        toast({
+          variant: "destructive",
+          title: "Warning!!!",
+          description: <p>This website <span className="underline">{values.url}</span> is flagged as malicious. Do not visit for your safety</p>,
+        })
+      }
+    } catch (err: any) {
       if (err.message === 'Network Error') {
-        checkFailed('Network Error');
+        checkFailed('');
+        toast({
+          variant: "destructive",
+          description: `${err.message}`,
+        })
       } else {
         checkFailed('');
+        toast({
+          variant: "destructive",
+          description: `${err.message}`,
+        })
       }
       console.log(err)
     }

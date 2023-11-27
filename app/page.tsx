@@ -59,9 +59,9 @@ export default function Home() {
           "clientVersion": "1.0"
         },
         "threatInfo": {
-          "threatTypes": ["SOCIAL_ENGINEERING"],
+          "threatTypes": ["THREAT_TYPE_UNSPECIFIED", "SOCIAL_ENGINEERING", "POTENTIALLY_HARMFUL_APPLICATION"],
           "platformTypes": ["ALL_PLATFORMS"],
-          "threatEntryTypes": ["URL"],
+          "threatEntryTypes": ["URL", "THREAT_ENTRY_TYPE_UNSPECIFIED"],
           "threatEntries": [
             { ...values }
           ]
@@ -73,7 +73,7 @@ export default function Home() {
       });
 
       checkSuccess("")
-
+      console.log(res.data)
       if (Object.keys(res.data).length === 0) {
         toast({
           variant: "success",

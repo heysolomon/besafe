@@ -1,4 +1,3 @@
-<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 <a name="readme-top"></a>
 
 <!-- Project Shields -->
@@ -57,7 +56,7 @@
 
 [![beSAFE][product-screenshot]](https://github.com/heysolomon/besafe/assets/59674245/e1ba5798-79a6-4661-9339-7263a81ae93d)
 
-beSAFE is a security service that checks URLs against Google's constantly updated lists of unsafe web resources. It helps identify and protect against phishing and deceptive sites. beSAFE alerts you, ensuring a worry-free online experience.
+beSAFE is a security tool that checks URLs against Google's constantly updated lists of unsafe web resources. It helps identify and protect against phishing and deceptive sites.
 
 ### Built With
 

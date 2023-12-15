@@ -8,6 +8,7 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'beSAFE',
   description: 'A security service for checking URLs against Googles updated lists of unsafe web resources.',
+  viewport: "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
 }
 
 export default function RootLayout({
